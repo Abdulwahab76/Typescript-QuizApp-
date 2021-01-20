@@ -11,7 +11,7 @@ function ButtonGroups(props: any) {
   const clickBtn = (x: any) => {
     setLevel(x.current?.value);
   };
-
+  console.log(level);
   return (
     <>
       <div className="level">

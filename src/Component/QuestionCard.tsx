@@ -27,11 +27,9 @@ export const QuestionCard: React.FC<questionPropsType> = ({
                     return (
                         <div key={ind} className="inp-btn">
                             <label>
-                                <input
+                                <Checkbox
                                     checked={opt === selectedAns}
                                     id="inp"
-                                    type="radio"
-                                    name="opt"
                                     value={opt}
                                     onChange={handleSelection}
                                 />

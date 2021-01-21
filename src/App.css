@@ -25,7 +25,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #888;
-    box-shadow: 8px 8px orange;
+    box-shadow: 4px 4px 2px 0px orange;
     text-align: center;
     color: orange;
 }

@@ -17,6 +17,12 @@ export type questionPropsType = {
     options: string[];
     callback: (e: React.FormEvent<EventTarget>, userAns: string) => void;
 };
+export type InputType = {
+    userName: string[];
+    level: string;
+    questions: string;
+};
+
 // export type QuestionPropsType = {
 //     question: string;
 //     options: string[];

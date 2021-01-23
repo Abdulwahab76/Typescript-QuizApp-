@@ -1,16 +1,19 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 
 /* The Modal (background) */
 .modal {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    margin: 80px auto;
 }
 .submit button {
-    background-color: rgb(247, 163, 7) !important;
+    background-color: rgba(231, 55, 85, 1) !important;
     color: white !important;
 }
 .submit {
@@ -18,23 +21,25 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.submit a {
+    text-decoration: none;
+}
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #888;
-    box-shadow: 4px 4px 2px 0px orange;
+    box-shadow: 4px 6px 2px 0px rgba(231, 55, 85, 1);
     text-align: center;
-    color: orange;
+    color: rgba(231, 55, 85, 1);
 }
+
 .modal-content .input {
     width: 90%;
 }
 
 .MuiButton-contained {
-    background-color: orange !important;
+    background-color: rgb(52, 195, 243) !important;
     /* width: 25%; */
     color: white !important;
     margin: 10px !important;
@@ -92,7 +97,67 @@ body {
     text-decoration: none;
     color: #007bff;
 }
+/* QuestionCard ==== */
+.question-container {
+    background: linear-gradient(
+        160deg,
+        rgb(52, 195, 243) 35%,
+        rgba(231, 55, 85, 1) 100%
+    );
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    margin: 30px auto;
+    font-family: "Raleway", sans-serif;
 
+    padding: 35px;
+}
+.question-container h2 {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.question p {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.submitbtn {
+    width: 160px;
+    height: 34px;
+    /* border-radius: 20px; */
+    outline: none;
+    border: none;
+    color: black;
+    font-family: "Raleway", sans-serif;
+    font-weight: bolder;
+    margin: 15px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+.submitbtn:hover {
+    background: linear-gradient(
+        160deg,
+        rgb(52, 195, 243) 35%,
+        rgba(231, 55, 85, 1) 100%
+    );
+    color: white;
+}
+.inp-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    padding: 0px 10px;
+    width: 250px;
+    margin: 9px;
+    border-radius: 20px;
+    background-color: white;
+}
 /* @media screen and (min-width: 950px) {
     .modal-content {
         width: 425px;

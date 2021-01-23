@@ -2,41 +2,58 @@ import React, { useState } from "react";
 import { questionPropsType } from "./../type/quiz_type";
 import "./../App.css";
 import Checkbox from "@material-ui/core/Checkbox";
+
 export const QuestionCard: React.FC<questionPropsType> = ({
-  question,
-  options,
+    question,
+    options,
 
-  callback,
+    callback,
 }) => {
-  let [selectedAns, setSelectedAns] = useState("");
-  const handleSelection = (ev: any) => {
-    setSelectedAns(ev.target.value);
-    console.log(ev.target.value);
-  };
-  return (
-    <div className="question-container">
-      <div className="question">{question}</div>
+    // interface AppContextInterface {
+    //     ref: React.MutableRefObject;
+    // }
+    let [selectedAns, setSelectedAns] = useState("");
+    // const myRef = React.useRef<HTMLInputElement>(null);
+    const [corrected, setCorrected] = useState(false);
+    // console.log(myRef);
+    const handleSelection = (ev: any) => {
+        setSelectedAns(ev.target.value);
+        setCorrected(true);
+    };
 
-      <form
-        onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}
-      >
-        {options.map((opt: string, ind: number) => {
-          return (
-            <div key={ind} className="inp-btn">
-              <label>
-                <Checkbox
-                  checked={opt === selectedAns}
-                  id="inp"
-                  value={opt}
-                  onChange={handleSelection}
-                />
-              </label>
-              {opt}
+    return (
+        <div className="question-container">
+            <h2>Question </h2>
+            <div className="question">
+                <p>{question}</p>
             </div>
-          );
-        })}
-        <input type="submit" />
-      </form>
-    </div>
-  );
+
+            <form
+                onSubmit={(e: React.FormEvent<EventTarget>) => {
+                    callback(e, selectedAns);
+                    setCorrected(false);
+                }}
+            >
+                {options.map((opt: string, ind: number) => {
+                    return (
+                        <label key={ind}>
+                            <div className="inp-btn">
+                                <Checkbox
+                                    checked={opt === selectedAns}
+                                    value={opt}
+                                    onChange={handleSelection}
+                                />
+                                {opt}
+                            </div>
+                        </label>
+                    );
+                })}
+                <input
+                    className="submitbtn"
+                    type="submit"
+                    disabled={corrected ? false : true}
+                />
+            </form>
+        </div>
+    );
 };

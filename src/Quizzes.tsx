@@ -16,6 +16,7 @@ function QuizScreen() {
     async function fetchData() {
       let x = context?.question;
       let y = context?.newData;
+      console.log(y, "its y");
       const questions: QuestionType[] = await getQuizzDetails(x, y);
       setQuiz(questions);
     }

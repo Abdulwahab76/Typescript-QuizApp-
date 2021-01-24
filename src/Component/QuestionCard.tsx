@@ -18,10 +18,6 @@ export const QuestionCard: React.FC<questionPropsType> = ({
     };
     const context = React.useContext(ContextItem);
 
-    useEffect(() => {
-        let userName = context?.userName;
-        console.log("user", userName);
-    });
     return (
         <div className="question-container">
             <h2>Hey {context?.userName}</h2>

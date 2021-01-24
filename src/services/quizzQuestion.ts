@@ -11,12 +11,12 @@ export const getQuizzDetails = async (
     let { results } = await req.json();
     let quiz: QuestionType[] = results.map((questionObj: Quiz, ind: number) => {
         return {
-            question: questionObj.question,
-            answer: questionObj.correct_answer,
-            correct_answer: questionObj.correct_answer,
             option: shuffleArray(
                 questionObj.incorrect_answers.concat(questionObj.correct_answer)
             ),
+            question: questionObj.question,
+            answer: questionObj.correct_answer,
+            correct_answer: questionObj.correct_answer,
         };
     });
     return quiz;

@@ -12,7 +12,6 @@ function QuizScreen() {
     const context = React.useContext(ContextItem);
     const [text, setText] = useState("");
     let [showResult, setShowResult] = useState(false);
-    console.log(context?.userName, "name");
 
     setTimeout(() => {
         setText("Please refresh your browser!");
@@ -20,9 +19,8 @@ function QuizScreen() {
     useEffect(() => {
         async function fetchData() {
             let x = context?.question;
-            let y = context?.newData;
-            console.log(y, "its y");
-            const questions: QuestionType[] = await getQuizzDetails(x, y);
+
+            const questions: QuestionType[] = await getQuizzDetails(x, "easy");
             setQuiz(questions);
         }
         fetchData();
@@ -58,11 +56,11 @@ function QuizScreen() {
                 <h2>Result</h2>
 
                 <p className="result-text ">
-                    Your final score is
+                    {context?.userName} Your final score is
                     <b> {score}</b> out of <b>{quiz.length} </b> <br />
                     <b>
-                        Your Quizz answers is
-                        {score === 1 || score === 2
+                        {context?.userName} Your Quizz answers is
+                        {score === 1 || score === 2 || score === 0
                             ? " Very Bad 😞 Please improve it!"
                             : " Very Good 😊 "}
                     </b>

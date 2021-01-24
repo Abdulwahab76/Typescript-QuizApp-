@@ -18,7 +18,6 @@ function Routed() {
     const [userName, setUserName] = useState("");
     const [newData, setNewData] = useState("");
     const [question, setQuestions] = useState(5);
-    console.log(newData, question, userName, "Route");
 
     return (
         <>

@@ -45,6 +45,7 @@ body {
     margin: 10px !important;
     font-size: 13px !important;
 }
+
 /* The Close Button */
 .level {
     color: rgb(88, 88, 88);
@@ -108,9 +109,10 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+
     flex-direction: column;
-    width: 60%;
-    margin: 30px auto;
+    width: 80%;
+    margin: 20px auto;
     font-family: "Raleway", sans-serif;
 
     padding: 35px;
@@ -158,14 +160,46 @@ body {
     border-radius: 20px;
     background-color: white;
 }
-/* @media screen and (min-width: 950px) {
-    .modal-content {
-        width: 425px;
-        height: 550px;
-        border-radius: 5px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.result-text {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+}
+
+.loading {
+    background: linear-gradient(
+        160deg,
+        rgb(52, 195, 243) 35%,
+        rgba(231, 55, 85, 1) 100%
+    );
+    font-family: "Raleway", sans-serif;
+
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+
+@media screen and (max-width: 375px) {
+    .chooseBtns .inp-btn {
+        width: 250px;
+        margin-left: -12px;
     }
-} */
+    .submitbtn {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .chooseBtns .inp-btn {
+        width: 225px;
+        margin-left: -15px;
+    }
+    .submitbtn {
+        margin-left: 18px;
+    }
+}
